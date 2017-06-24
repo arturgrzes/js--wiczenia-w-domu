@@ -1,18 +1,33 @@
-function sumaIloczyn(tablica){
+function fibonacci(n) {
     
-    var suma = 0, iloczyn = 1;
-    
-    for (var i=0; i < tablica.length; i++){
+    if (n === 1) {
+        return 0;
         
         
-        suma = suma + tablica[i];
-        iloczyn *= tablica[i];
     }
     
-    console.log(suma + " " + iloczyn);
+    if (n ===2) {
+        
+        return 1;
+    }
     
+    
+    var fibPrev = 0;
+    var fibNext = 1;
+    var nElement = 0;
+    
+    for(var i = 2; i <=n; i++) {
+        
+        nElement = fibPrev + fibNext;
+        fibPrev = fibNext;
+        fibNext = nElement;
+    }
+    
+    
+    
+    return nElement;
     
     
 }
 
-sumaIloczyn([1, 2, 3, 4, 5, 6]);
+console.log(fibonacci(4));
